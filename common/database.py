@@ -6,7 +6,7 @@ import pymongo
 
 class Database:
     URI = os.environ.get("MONGOLAB_URI")  # capital letters: constant, not variable
-    DATABASE = pymongo.MongoClient(URI).get_database()
+    DATABASE = pymongo.MongoClient(URI).get_default_database()
 
     @staticmethod
     def insert(collection: str, data: Dict):

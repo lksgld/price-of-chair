@@ -1,10 +1,11 @@
+import os
 from typing import Dict
 
 import pymongo
 
 
 class Database:
-    URI = "mongodb://127.0.0.1:27017/pricing"   # capital letters: constant, not variable
+    URI = os.environ.get("MONGOLAB_URI")  # capital letters: constant, not variable
     DATABASE = pymongo.MongoClient(URI).get_database()
 
     @staticmethod

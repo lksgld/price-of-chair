@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Pricing Service!</h1>
+        <p class="lead">We scan online stores to alert you when the price of your selected items drops.</p>
+        <hr class="my-4">
+        <p>Sign-up, add the URL and we'll do the rest. It's free!</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('users.register_user') }}" role="button">Get started</a>
+    </div>
+{% endblock %}

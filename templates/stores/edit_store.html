@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <header><h1>Update Store</h1></header>
+    <section class="create-store-form">
+        <form method="post">
+
+             <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Favorite Store" value="{{ store.name }}"/>
+            </div>
+
+            <div class="form-group">
+                <label for="url_prefix">URL Prefix</label>
+                <input type="text" class="form-control" id="url_prefix" name="url_prefix" placeholder="https://johnlewis.com/" value="{{ store.url_prefix }}" aria-describedby="urlPrefixHelp"/>
+                <small class="form-text text-muted" id="urlPrefixHelp">The URL all the items start with</small>
+            </div>
+
+             <div class="form-group">
+                <label for="tag_name">HTML Tag Name</label>
+                <input type="text" class="form-control" id="tag_name" name="tag_name" placeholder="span" value="{{ store.tag_name }}" aria-describedby="tagNameHelp"/>
+                 <small class="form-text text-muted" id="tagNameHelp">Which HTML tag contains the price?</small>
+            </div>
+
+            <div class="form-group">
+                <label for="query">HTML Query</label>
+                <input type="text" class="form-control" id="query" name="query" placeholder='{"class:" "price price--large"}' value='{{ store.query }}' aria-describedby="queryHelp"/>
+                 <small class="form-text text-muted" id="queryHelp">What attributes does the tag have?</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </section>
+{% endblock %}

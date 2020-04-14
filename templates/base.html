@@ -21,8 +21,7 @@
                     <a class="nav-item nav-link" href="{{ url_for('stores.index') }}">Stores</a>
                     <a class="nav-item nav-link" href="{{ url_for('alerts.index') }}">Alerts</a>
                 {% endif %}
-                {% if session|length %}
-                    {% else %}
+                {% if not session['email'] %}
                     <a class="nav-item nav-link" href="{{ url_for('users.login_user') }}">Log in</a>
                 {% endif %}
                 {% if session['email'] %}

@@ -5,7 +5,7 @@ import pymongo
 
 
 class Database:
-    URI = os.environ.get("MONGOLAB_URI")  # capital letters: constant, not variable
+    URI = os.environ.get("MONGODB_URI")  # capital letters: constant, not variable
     DATABASE = pymongo.MongoClient(URI).get_default_database()
 
     @staticmethod
